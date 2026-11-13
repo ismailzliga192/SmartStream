@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/output.css" rel="stylesheet">
-    <title>Document</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.4.0/video-scaffold.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/cdn@10.4.0/media/hlsjs-video.js"></script>
+    <title>SmartStream</title>
 </head>
 <body>
-    <main class="flex flex-row w-full h-screen static">
-    <section class="flex flex-col bg-gray-800 w-[50%] h-screen">
+    <main class="flex flex-row w-full h-screen relative">
+    <section class="flex flex-col bg-black w-[50%] h-screen">
         
         <div class="flex flex-row">
-            <button class="w-[10%] h-[55%]" id="open-popout"><img src="imgs/triangle_droite_bleu_fonce.png" alt="button" class="w-full h-full"></button>
+            <button class="w-[10%] h-[70%]" id="open-popout"><img src="imgs/triangle_blanc_fond_violet.png" alt="button" class="w-full h-full"></button>
             
-            <img src="imgs/SMART STREAM@2x.png" alt="logo" class="w-1/2 h-[50%] m-2">
+            <h1 class=" text-white text-4xl shadow-purple-600">SmartStream</h1>
             
-            <input type="search" class="w-[95%] text-white border border-white rounded bg-gray-950 mt-9 mr-3 p-2 h-[15%]">
+            <input type="search" class="w-[95%] text-white border border-purple-600 rounded bg-gray-950 mt-4 mr-3 p-2 h-[15%]" id="search">
 
         </div>
        
-        <ul class="flex flex-col bg-gray-950 mt-9 w-full border border-blue-800 h-[76%] overflow-y-auto" id="channel">
+        <ul class="flex flex-col bg-gray-950 mt-9 w-full border border-blue-800 h-[85%] overflow-y-auto" id="channel">
                 
         </ul>
             
@@ -27,24 +29,43 @@
        
 
     </section>
-    <section class=" bg-gray-900 w-[30%] h-screen absolute left-0 top-0 hidden" id="popout-page">
-        <button type="button" id="close-popout" class="w-12 h-12 rounded-full bg-amber-500 text-white text-2xl">X</button>
-
-    </section>
-    <section class="w-screen">
-    <div class="flex flex-row bg-blue-700 h-1/2 w-full">
+    <div id="popout-page" class="hidden fixed inset-0 z-50 bg-black/50">
+       <section class="bg-purple-600 w-[30%] h-screen">
+          <button type="button" id="close-popout" class="border border-blue-800 ml-[100%] bg-blue-50">X</button>
+          <h1 class="text-4xl text-white ml-36">Categories</h1>
+          <div class="flex flex-col items-center bg-black w-full h-[80%] mt-3 overflow-auto" id="categories">
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="ALL">ALL</button>
+            <button type="button" class=" category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="Morocco">Morocco</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="France">France</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="Japan">Japan</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="China">China</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="America">UnitedStats</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="UK">UnitedKingdom</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="Spain">Spain</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="Italy">Italy</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="Russia">Russia</button>
+            <button type="button" class="category-btn w-[90%] h-[10%] bg-purple-600 mt-4 p-3 rounded-2xl text-2xl text-white" id="Korea">Korea</button>
+         
+              
+          </div>
+       </section>
+   </div>
+    
+   <section class="w-screen">
+       <div class="flex flex-row bg-black h-1/2 w-full justify-center" id="imgpreview">
     
 
-    </div>
-    <div class="flex flex-col bg-gray-950 w-full h-1/2">
-      <h1 class=""></h1>
-    </div>
+       </div>
+      <div class="flex flex-row bg-purple-600 w-full h-1/2 items-center justify-between" id="info">
+        
+
+      </div>
 
     </section>
     
    
     </main>
     
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/ui.js"></script>
 </body>
 </html>
