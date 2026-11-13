@@ -18,7 +18,7 @@ async function getData() {
 getData();
 function displayChannels(List) {
     channel.innerHTML = List.map((ch) => {
-        return `<li class="CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white" data-id="${ch.id}">
+        return `<li class="CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white hover:bg-purple-900" data-id="${ch.id}">
                   <div class="flex flex-row gap-2 w-full items-center">
                      <img src="${ch.logo}" alt="${ch.name}"></img>
                      <p>${ch.name}</p>
@@ -78,9 +78,26 @@ popout.addEventListener("click", function (event) {
     })
     
 }
+export function changeBgChannel() {
+    channel.addEventListener('click', (e) => {
+        const item = e.target.closest('.CHANNELS');
+        if (!item) return;
+
+        channel.querySelectorAll('.CHANNELS').forEach(li => {
+            li.classList.remove('bg-black');
+            li.classList.add('bg-purple-600');
+        });
+        item.classList.remove('bg-purple-600');
+        item.classList.add('bg-black');
+    });
+}
+
 ChannelsContent();
 filtercountry();
 SearchChannels();
+changeBgChannel();
+
+
 
 
 

@@ -13,7 +13,7 @@ export async function filtercountry(){
         data.forEach(element =>{
             if(element.country === event.target.id){
                 const list = document.createElement('li');
-                list.className = "CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white"
+                list.className = "CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white hover:bg-purple-900"
                 list.dataset.id = element.id
                 list.innerHTML=`
                   <div class="flex flex-row gap-2 w-full items-center">
@@ -24,7 +24,7 @@ export async function filtercountry(){
                 channel.appendChild(list)
             }else if(event.target.id === 'ALL'){
                 const list = document.createElement('li');
-                list.className = "CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white"
+                list.className = "CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white hover:bg-purple-900"
                 list.dataset.id = element.id
                 list.innerHTML=`
                   <div class="flex flex-row gap-2 w-full items-center">
@@ -51,7 +51,7 @@ export async function SearchChannels() {
        channel.innerHTML='';
        chfilter.forEach(element =>{
          const list = document.createElement('li');
-                list.className = "CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white"
+                list.className = "CHANNELS flex flex-row cursor-pointer gap-0.5 bg-purple-600 text-white h-20 w-full border border-white hover:bg-purple-900"
                 list.dataset.id = element.id
                 list.innerHTML=`
                   <div class="flex flex-row gap-2 w-full items-center">
